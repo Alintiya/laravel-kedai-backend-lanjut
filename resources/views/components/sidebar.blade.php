@@ -1,24 +1,30 @@
 <div class="main-sidebar sidebar-style-2">
-    <aside id="sidebar-wrapper">
-        <div class="sidebar-brand">
-            <a href="index.html">E - Kedai Teknologi </a>
-        </div>
-        <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
-        </div>
-        <ul class="sidebar-menu">
-            <li class="{{ Request::is('credits') ? 'active' : '' }}">
-                <a class="nav-link"
-                    href=""><i class="fa-sharp-duotone fa-solid fa-house"></i>
-                    </i> <b><span>Dashboard</span></b>
-                </a>
-            </li>
+    <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+            <div class="sidebar-brand">
+                <a href="index.html">my-KEDAI</a>
+                <a href="index.html"><img src="{{ asset('img/kedai.png') }}" alt="logo" width="80"></a>
+            </div>
+            <div class="sidebar-brand sidebar-brand-sm">
+                <a href="index.html">MK</a>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-header">Dashboard</li>
+                <li class="{{ Request::is('home*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('home') }}"><i class="fa-solid fa-house"></i></i></i><span>Dashboard</span></a>
+                </li>
+                {{-- <li class="menu-header">Users</li> --}}
+                <li class="{{ Request::is('user*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('user.index')}}"><i class="fa-solid fa-users"></i></i><span>All Users</span></a>
+                </li>
 
-            <li class="{{ Request::is('credits') ? 'active' : '' }}">
-                <a class="nav-link"
-                    href="{{ route('user.index')}}"><i class="fa-sharp-duotone fa-solid fa-user"></i>
-                    </i> <b><span>Users</span></b>
-                </a>
-            </li>
-    </aside>
+                {{-- <li class="menu-header">Product</li> --}}
+                <li class="{{ Request::is('product*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('product.index')}}"><i class="fa-solid fa-basket-shopping"></i></i></i></i></i><span>All Products</span></a>
+
+                </li>
+
+            </ul>
+        </aside>
+    </div>
 </div>
